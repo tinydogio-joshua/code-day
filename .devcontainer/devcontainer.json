@@ -1,0 +1,42 @@
+{
+	"name": "Node & MariaDB",
+	"dockerComposeFile": "../docker-compose.local.yml",
+	"service": "app",
+	"runServices": [
+		"app",
+		"db"
+	],
+	"workspaceFolder": "/workspace",
+	"settings": {
+		"editor.formatOnSave": true,
+		"telemetry.enableTelemetry": false,
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"sqltools.connections": [
+			{
+				"name": "Container database",
+				"driver": "MariaDB",
+				"server": "localhost",
+				"previewLimit": 50,
+				"port": 3306,
+				"database": "codeday",
+				"username": "root",
+				"password": "ATERRIBLEROOTPASSWORDDONOTUSE"
+			}
+		]
+	},
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"formulahendry.code-runner",
+		"ms-azuretools.vscode-docker",
+		"ms-vscode.vscode-typescript-tslint-plugin",
+		"mtxr.sqltools",
+		"mtxr.sqltools-driver-mysql",
+	],
+	"forwardPorts": [
+		4000,
+		3306
+	],
+	// "postCreateCommand": "cd backend && yarn install",
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "node"
+}
