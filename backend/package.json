@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Code Day Project for Joshua Hamilton",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "clear && npx nodemon index.ts",
+    "start": "clear && npx nodemon src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
