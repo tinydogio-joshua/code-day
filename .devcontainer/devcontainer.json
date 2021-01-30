@@ -1,14 +1,15 @@
 {
 	"name": "Node & MariaDB",
 	"dockerComposeFile": "../docker-compose.local.yml",
-	"service": "app",
+	"service": "codeday_backend",
 	"runServices": [
-		"app",
-		"db"
+		"codeday_backend",
+		"codeday_db"
 	],
 	"workspaceFolder": "/workspace",
 	"settings": {
 		"editor.formatOnSave": true,
+		"files.insertFinalNewline": true,
 		"telemetry.enableTelemetry": false,
 		"terminal.integrated.shell.linux": "/bin/bash",
 		"sqltools.connections": [
