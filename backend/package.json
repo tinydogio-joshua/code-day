@@ -4,8 +4,9 @@
   "description": "Code Day Project for Joshua Hamilton",
   "main": "src/index.ts",
   "scripts": {
-    "migrate": "clear && npx typeorm migration:run",
-    "migration": "clear && npx typeorm migration:create -n",
+    "db:entity": "clear && npx ts-node ./node_modules/typeorm/cli.js entity:create -n",
+    "db:migrate": "clear && npx ts-node ./node_modules/typeorm/cli.js migration:run",
+    "db:migration": "clear && npx ts-node ./node_modules/typeorm/cli.js migration:create -n",
     "start": "clear && npx nodemon src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

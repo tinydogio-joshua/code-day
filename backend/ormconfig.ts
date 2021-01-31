@@ -13,6 +13,7 @@ export default {
   entities: ['./src/entities/**/*.model.ts'],
   migrations: ['./src/migrations/*.ts'],
   cli: {
+    entitiesDir: './src/entities',
     migrationsDir: './src/migrations',
   },
   synchronize: process.env.DATABASE_SYNCHRONIZE,
