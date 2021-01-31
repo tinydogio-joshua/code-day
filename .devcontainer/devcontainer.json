@@ -9,6 +9,7 @@
 	"workspaceFolder": "/workspace",
 	"settings": {
 		"editor.formatOnSave": true,
+		"eslint.packageManager": "yarn",
 		"files.insertFinalNewline": true,
 		"telemetry.enableTelemetry": false,
 		"terminal.integrated.shell.linux": "/bin/bash",

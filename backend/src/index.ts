@@ -1,8 +1,8 @@
-import "reflect-metadata";
-import dotenv from "dotenv";
-import express from "express";
-import { createConnection } from "typeorm";
-import AppRouter from "./router";
+import 'reflect-metadata';
+import dotenv from 'dotenv';
+import express from 'express';
+import { createConnection } from 'typeorm';
+import AppRouter from './router';
 
 dotenv.config();
 
