@@ -1,11 +1,19 @@
-import express from 'express';
-import AppRouter from './router';
+import "reflect-metadata";
+import dotenv from "dotenv";
+import express from "express";
+import { createConnection } from "typeorm";
+import AppRouter from "./router";
 
-const app = express();
-const PORT = 8000;
+dotenv.config();
 
-app.use(AppRouter);
+createConnection()
+  .then(() => {
+    const app = express();
 
-app.listen(PORT, () => {
-  console.log(`🌭 [server]: Server is running at http://localhost:${PORT}`);
-});
+    app.use(AppRouter);
+
+    app.listen(process.env.APP_BACKEND_PORT, () => {
+      console.log(`🟢 [server]: Server is running at ${process.env.APP_BACKEND_HOST}:${process.env.APP_BACKEND_PORT}`);
+    });
+  })
+  .catch((error) => console.error(error));
