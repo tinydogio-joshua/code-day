@@ -28,4 +28,5 @@ export class CreateCustomer1612063139951 implements MigrationInterface {
         await queryRunner.dropIndex('customers', 'IDX_CUSTOMERS_NAME');
         await queryRunner.dropTable('customers');
     }
+
 }
