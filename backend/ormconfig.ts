@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 import { ConnectionOptions } from 'typeorm';
-import Entities from './src/entities';
 
 dotenv.config();
 
@@ -11,7 +10,11 @@ export default {
   username: process.env.DATABASE_USERNAME,
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE_NAME,
-  entities: Entities,
+  entities: ['./src/entities/**/*.model.ts'],
+  migrations: ['./src/migrations/*.ts'],
+  cli: {
+    migrationsDir: './src/migrations',
+  },
   synchronize: process.env.DATABASE_SYNCHRONIZE,
   logging: process.env.DATABASE_LOGGING,
 } as ConnectionOptions;
