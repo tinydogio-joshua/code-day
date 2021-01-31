@@ -9,4 +9,10 @@ export default class Project {
   @Column()
   name!: string;
 
+  @Column({ type: 'timestamp' })
+  created_at!: Date;
+
+  @Column({ type: 'timestamp' })
+  updated_at!: Date;
+
 }

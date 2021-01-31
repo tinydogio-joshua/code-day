@@ -9,4 +9,10 @@ export default class TaskLog {
   @Column()
   duration_minutes!: number;
 
+  @Column({ type: 'timestamp' })
+  created_at!: Date;
+
+  @Column({ type: 'timestamp' })
+  updated_at!: Date;
+
 }

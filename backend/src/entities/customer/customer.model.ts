@@ -9,4 +9,10 @@ export default class Customer {
   @Column()
   name!: string;
 
+  @Column({ type: 'timestamp' })
+  created_at!: Date;
+
+  @Column({ type: 'timestamp' })
+  updated_at!: Date;
+
 }

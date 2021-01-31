@@ -12,4 +12,10 @@ export default class Task {
   @Column()
   description!: string;
 
+  @Column({ type: 'timestamp' })
+  created_at!: Date;
+
+  @Column({ type: 'timestamp' })
+  updated_at!: Date;
+
 }
