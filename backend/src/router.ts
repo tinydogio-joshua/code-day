@@ -1,5 +1,5 @@
 import express from 'express';
-import UserRouter from './user/user.router';
+import UserRouter from './entities/user/user.router';
 
 const router = express.Router();
 
