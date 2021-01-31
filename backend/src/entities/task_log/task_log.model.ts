@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('task_log')
+@Entity('task_logs')
 export default class TaskLog {
 
   @PrimaryGeneratedColumn()
