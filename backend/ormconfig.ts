@@ -16,6 +16,6 @@ export default {
     entitiesDir: './src/entities',
     migrationsDir: './src/migrations',
   },
-  synchronize: !!process.env.DATABASE_SYNCHRONIZE,
+  synchronize: false,
   logging: !!process.env.DATABASE_LOGGING,
 } as ConnectionOptions;
