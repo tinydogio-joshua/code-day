@@ -1,8 +1,8 @@
 import express from 'express';
-import Controller from './user.controller';
+import Controller from './task_log.controller';
 
 const router = express.Router();
 
-router.get('/signup', Controller.signup);
+router.get('/record', Controller.record);
 
 export default router;
