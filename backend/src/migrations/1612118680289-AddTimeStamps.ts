@@ -77,8 +77,8 @@ export class AddTimeStamps1612118680289 implements MigrationInterface {
         await queryRunner.dropColumn('tasks', 'updated_at');
         await queryRunner.dropColumn('tasks', 'created_at');
 
-        await queryRunner.dropColumn('projects', 'created_at');
         await queryRunner.dropColumn('projects', 'updated_at');
+        await queryRunner.dropColumn('projects', 'created_at');
 
         await queryRunner.dropColumn('customers', 'updated_at');
         await queryRunner.dropColumn('customers', 'created_at');
