@@ -67,6 +67,25 @@ async function retrieve(req: Request, res: Response, next: NextFunction) {
 
 
 // ====================================================================================
+//  Retrieve All Customers - retrieveAll()
+// ====================================================================================
+
+async function retrieveAll(req: Request, res: Response, next: NextFunction) {
+  const customers = await getConnection()
+    .createQueryBuilder()
+    .select([
+      'customer.id',
+      'customer.name',
+    ])
+    .from(Customer, 'customer')
+    .orderBy('customer.name')
+    .getMany();
+
+  res.json(customers);
+}
+
+
+// ====================================================================================
 //  Update Customer - Update()
 // ====================================================================================
 
@@ -91,5 +110,6 @@ export default {
   getCustomerById,
   register,
   retrieve,
+  retrieveAll,
   update,
 };
