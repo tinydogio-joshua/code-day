@@ -2,13 +2,14 @@ import { NextFunction, Request, Response } from 'express';
 import { getConnection } from 'typeorm';
 import { retrieveProject } from '../../project/actions';
 import Task from '../task.model';
+import { retrieveTask } from './task.retrieve.action';
 
 // TODO: Add tests and error checking.
 // TODO: Figure out appropriate return type via typeorm.
 export async function createTask(projectId: number, title: string = '', description: string = ''): Promise<any | undefined> {
   const project = await retrieveProject(projectId);
 
-  const task = await getConnection()
+  const newTask = await getConnection()
     .createQueryBuilder()
     .insert()
     .into(Task)
@@ -21,6 +22,9 @@ export async function createTask(projectId: number, title: string = '', descript
     ])
     .execute()
     .then((value) => value.generatedMaps[0]);
+
+
+  const task = await retrieveTask(newTask.id);
 
   return task;
 }

@@ -1,8 +1,9 @@
 import express from 'express';
-import Controller from './user.controller';
+import { createUserAction, retrieveUserAction } from './actions';
 
 const router = express.Router();
 
-router.get('/signup', Controller.signup);
+router.post('/signup', createUserAction);
+router.get('/:id', retrieveUserAction);
 
 export default router;
