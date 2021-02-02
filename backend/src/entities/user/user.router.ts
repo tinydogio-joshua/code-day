@@ -1,8 +1,9 @@
 import express from 'express';
-import { createUserAction, retrieveUserAction } from './actions';
+import { createUserAction, retrieveAllUsersAction, retrieveUserAction } from './actions';
 
 const router = express.Router();
 
+router.get('/all', retrieveAllUsersAction);
 router.post('/signup', createUserAction);
 router.get('/:id', retrieveUserAction);
 
