@@ -1,8 +1,18 @@
 import express from 'express';
-import Controller from './user.controller';
+import {
+  createUserAction,
+  deleteUserAction,
+  retrieveAllUsersAction,
+  retrieveUserAction,
+  updateUserAction,
+} from './actions';
 
 const router = express.Router();
 
-router.get('/signup', Controller.signup);
+router.get('/all', retrieveAllUsersAction);
+router.post('/signup', createUserAction);
+router.get('/:id/delete', deleteUserAction);
+router.post('/:id/update', updateUserAction);
+router.get('/:id', retrieveUserAction);
 
 export default router;
