@@ -1,8 +1,8 @@
 import express from 'express';
-import Controller from './task_log.controller';
+import { createTaskLogAction } from './actions';
 
 const router = express.Router();
 
-router.get('/record', Controller.record);
+router.post('/create', createTaskLogAction);
 
 export default router;

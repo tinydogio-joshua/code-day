@@ -10,7 +10,7 @@ const router = express.Router();
 router.use('/customer', CustomerRouter);
 router.use('/project', ProjectRouter);
 router.use('/task', TaskRouter);
-router.use('/task/:id/log', TaskLogRouter);
+router.use('/task-log', TaskLogRouter);
 router.use('/user', UserRouter);
 
 export default router;
