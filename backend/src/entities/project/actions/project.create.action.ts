@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { getConnection } from 'typeorm';
 import CustomerController from '../../customer/customer.controller';
+import { retrieveProject } from './project.retrieve.action';
 import Project from '../project.model';
 
 // TODO: Add tests and error checking.
@@ -8,7 +9,7 @@ import Project from '../project.model';
 export async function createProject(name: string, customerId: number): Promise<any | undefined> {
   const customer = await CustomerController.getCustomerById(customerId);
 
-  const project = await getConnection()
+  const newProject = await getConnection()
     .createQueryBuilder()
     .insert()
     .into(Project)
@@ -20,6 +21,8 @@ export async function createProject(name: string, customerId: number): Promise<a
     ])
     .execute()
     .then((value) => value.generatedMaps[0]);
+
+  const project = retrieveProject(newProject.id);
 
   return project;
 }
