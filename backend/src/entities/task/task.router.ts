@@ -1,8 +1,9 @@
 import express from 'express';
-import { createTaskAction, retrieveTaskAction, updateTaskAction } from './actions';
+import { createTaskAction, retrieveAllTasksAction, retrieveTaskAction, updateTaskAction } from './actions';
 
 const router = express.Router();
 
+router.get('/all', retrieveAllTasksAction);
 router.post('/create', createTaskAction);
 router.post('/:id/update', updateTaskAction);
 router.get('/:id', retrieveTaskAction);
