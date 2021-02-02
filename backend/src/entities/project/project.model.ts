@@ -13,7 +13,7 @@ export default class Project {
 
   @ManyToOne(() => Customer, customer => customer.projects)
   @JoinColumn({ name: 'customer_id' })
-  customer!: Customer;
+  customer: Customer | undefined;
 
   @OneToMany(() => Task, task => task.project)
   tasks!: Task[];
