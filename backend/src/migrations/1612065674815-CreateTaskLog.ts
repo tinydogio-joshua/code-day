@@ -9,7 +9,9 @@ export class CreateTaskLog1612065674815 implements MigrationInterface {
                 {
                     name: 'id',
                     type: 'int',
-                    isPrimary: true
+                    isPrimary: true,
+                    isGenerated: true,
+                    generationStrategy: 'increment',
                 },
                 {
                     name: 'duration_minutes',

@@ -7,61 +7,66 @@ export class AddTimeStamps1612118680289 implements MigrationInterface {
         await queryRunner.addColumn('customers', new TableColumn({
             name: 'created_at',
             type: 'timestamp',
-            default: 'now()'
+            default: 'CURRENT_TIMESTAMP'
         }));
 
         await queryRunner.addColumn('customers', new TableColumn({
             name: 'updated_at',
             type: 'timestamp',
-            default: 'now()'
+            default: 'CURRENT_TIMESTAMP',
+            onUpdate: 'CURRENT_TIMESTAMP',
         }));
 
         await queryRunner.addColumn('projects', new TableColumn({
             name: 'created_at',
             type: 'timestamp',
-            default: 'now()'
+            default: 'CURRENT_TIMESTAMP'
         }));
 
         await queryRunner.addColumn('projects', new TableColumn({
             name: 'updated_at',
             type: 'timestamp',
-            default: 'now()'
+            default: 'CURRENT_TIMESTAMP',
+            onUpdate: 'CURRENT_TIMESTAMP',
         }));
 
         await queryRunner.addColumn('tasks', new TableColumn({
             name: 'created_at',
             type: 'timestamp',
-            default: 'now()'
+            default: 'CURRENT_TIMESTAMP'
         }));
 
         await queryRunner.addColumn('tasks', new TableColumn({
             name: 'updated_at',
             type: 'timestamp',
-            default: 'now()'
+            default: 'CURRENT_TIMESTAMP',
+            onUpdate: 'CURRENT_TIMESTAMP',
         }));
 
         await queryRunner.addColumn('task_logs', new TableColumn({
             name: 'created_at',
             type: 'timestamp',
-            default: 'now()'
+            default: 'CURRENT_TIMESTAMP'
         }));
 
         await queryRunner.addColumn('task_logs', new TableColumn({
             name: 'updated_at',
             type: 'timestamp',
-            default: 'now()'
+            default: 'CURRENT_TIMESTAMP',
+            onUpdate: 'CURRENT_TIMESTAMP',
         }));
 
         await queryRunner.addColumn('users', new TableColumn({
             name: 'created_at',
             type: 'timestamp',
-            default: 'now()'
+            default: 'CURRENT_TIMESTAMP'
         }));
 
         await queryRunner.addColumn('users', new TableColumn({
             name: 'updated_at',
             type: 'timestamp',
-            default: 'now()'
+            default: 'CURRENT_TIMESTAMP',
+            onUpdate: 'CURRENT_TIMESTAMP',
         }));
 
     }
