@@ -19,6 +19,10 @@ All the following commands are to be run from within the `devcontainer`.
 **Install Dependencies**
 * Enter `cd frontend && yarn install` in the terminal.
 
+**Configure Frontend Environment**
+* Copy the `.env.example` file found in the `frontend` directory and name it `.env`.
+  * Change the contents of the new `.env` file to your approprate settings. If you are just testing this app, you can leave the defaults.
+
 **Running the Frontend Application**
 * From within the `frontend` directory, enter `yarn start` in the terminal.
   * The frontend application runs at the following URL locally: [http://localhost:4000](http://localhost:4000)
@@ -30,6 +34,10 @@ All the following commands are to be run from within the `devcontainer`.
 
 **Install Dependencies**
 * Enter `cd backend && yarn install` in the terminal.
+
+**Configure Backend Environment**
+* Copy the `.env.example` file found in the `backend` directory and name it `.env`.
+  * Change the contents of the new `.env` file to your approprate settings. If you are just testing this app, you can leave the defaults.
 
 **Setup Database**
 * Go to the `backend` directory in your terminal.
