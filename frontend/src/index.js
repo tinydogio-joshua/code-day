@@ -7,6 +7,6 @@ const app = express();
 
 app.use(express.static('public'));
 
-app.listen(process.env.APP_BACKEND_PORT, () => {
-  console.log(`🎉 [server]: Server is running at ${process.env.APP_BACKEND_HOST}:${process.env.APP_BACKEND_PORT}`);
+app.listen(process.env.APP_FRONTEND_PORT, () => {
+  console.log(`🎉 [server]: Server is running at ${process.env.APP_FRONTEND_HOST}:${process.env.APP_FRONTEND_PORT}`);
 });
