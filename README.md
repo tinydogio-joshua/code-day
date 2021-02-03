@@ -5,10 +5,12 @@ This is my code day project. Currently it is only the backend API with a databas
 
 Everything is setup to run within a VSCode "devcontainer".
 
+[Technology Stack Outlined Here](https://github.com/tinydogio-joshua/code-day/issues/1)
+
 **Requirements**
-* Docker
-* VS Code
-* VS Code Remote Container Extension
+* [Docker](https://www.docker.com)
+* [VS Code](https://code.visualstudio.com)
+* [VS Code Remote Container Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
 Backend Services
 ----------------
@@ -25,8 +27,7 @@ All the following commands are to be run from within the `devcontainer`.
 
 **Running the Backend Application**
 * From within the `backend` directory, enter `yarn start` in the terminal.
-  * Backend services runs at the following URL locally: [http://localhost:8000
-](http://localhost:8000)
+  * Backend services runs at the following URL locally: [http://localhost:8000](http://localhost:8000)
 
 Notes
 -----
