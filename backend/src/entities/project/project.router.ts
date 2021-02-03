@@ -3,6 +3,7 @@ import {
   createProjectAction,
   deleteProjectAction,
   retrieveAllProjectsAction,
+  retrieveAllProjectsForCustomerAction,
   retrieveProjectAction,
   updateProjectAction,
 } from './actions';
@@ -10,6 +11,7 @@ import {
 const router = express.Router();
 
 router.get('/all', retrieveAllProjectsAction);
+router.get('/all-for-customer/:id', retrieveAllProjectsForCustomerAction);
 router.post('/create', createProjectAction);
 router.get('/:id/delete', deleteProjectAction);
 router.post('/:id/update', updateProjectAction);
