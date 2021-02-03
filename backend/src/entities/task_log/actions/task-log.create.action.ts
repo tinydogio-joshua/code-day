@@ -3,6 +3,7 @@ import { getConnection } from 'typeorm';
 import { retrieveTask } from '../../task/actions';
 import { retrieveUser } from '../../user/actions';
 import TaskLog from '../task_log.model';
+import { retrieveTaskLog } from './task-log.retrieve.action';
 
 // TODO: Add tests and error checking.
 // TODO: Figure out appropriate return type via typeorm.
@@ -24,7 +25,9 @@ export async function createTaskLog(taskId: number, userId: number, durationMinu
     .execute()
     .then((value) => value.generatedMaps[0]);
 
-  return newTaskLog;
+  const taskLog = await retrieveTaskLog(newTaskLog.id);
+
+  return taskLog;
 }
 
 
