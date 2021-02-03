@@ -1,11 +1,12 @@
 import { NextFunction, Request, Response } from 'express';
 import { getConnection } from 'typeorm';
 import Customer from '../customer.model';
+import { retrieveCustomer } from './customer.retrieve.action';
 
 // TODO: Add tests and error checking.
 // TODO: Figure out appropriate return type via typeorm.
 export async function registerCustomer(name: string): Promise<any | undefined> {
-  const customer = await getConnection()
+  const newCustomer = await getConnection()
     .createQueryBuilder()
     .insert()
     .into(Customer)
@@ -16,6 +17,8 @@ export async function registerCustomer(name: string): Promise<any | undefined> {
     ])
     .execute()
     .then((value) => value.generatedMaps[0]);
+
+  const customer = await retrieveCustomer(newCustomer.id);
 
   return customer;
 }
