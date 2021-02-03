@@ -187,6 +187,25 @@
 					"response": []
 				},
 				{
+					"name": "Retrieve All Projects for Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{codeday_host}}/project/all-for-customer/1",
+							"host": [
+								"{{codeday_host}}"
+							],
+							"path": [
+								"project",
+								"all-for-customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Retrieve Project",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -308,6 +327,25 @@
 							"path": [
 								"task",
 								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve All Tasks for Project",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{codeday_host}}/task/all-for-project/1",
+							"host": [
+								"{{codeday_host}}"
+							],
+							"path": [
+								"task",
+								"all-for-project",
+								"1"
 							]
 						}
 					},
@@ -573,13 +611,32 @@
 					"response": []
 				},
 				{
+					"name": "Retrieve All Users for Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{codeday_host}}/user/all-for-customer/1",
+							"host": [
+								"{{codeday_host}}"
+							],
+							"path": [
+								"user",
+								"all-for-customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Signup User",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"customerId\": 1,\n    \"email\": \"joshua@example.com\"\n}",
+							"raw": "{\n    \"customerId\": 1,\n    \"email\": \"joshua@example.com\",\n    \"password\": \"joshua\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
