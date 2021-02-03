@@ -1,10 +1,10 @@
 import express from 'express';
-import { registerCustomerAction, retrieveCustomerAction } from './actions';
+import { registerCustomerAction, retrieveAllCustomersAction, retrieveCustomerAction } from './actions';
 import Controller from './customer.controller';
 
 const router = express.Router();
 
-router.get('/all', Controller.retrieveAll);
+router.get('/all', retrieveAllCustomersAction);
 router.post('/register', registerCustomerAction);
 router.get('/:id/delete', Controller.deleteCustomer);
 router.post('/:id/update', Controller.update);
