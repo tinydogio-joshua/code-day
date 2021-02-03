@@ -37,7 +37,6 @@
 	"forwardPorts": [
 		3306, // MariaDB
 		4000, // Frontend
-		6006, // Storybook
 		8000, // Backend
 	],
 	// "postCreateCommand": "cd backend && yarn install", // TODO: Finish setting up postCreateCommand.
