@@ -12,12 +12,24 @@ Everything is setup to run within a VSCode "devcontainer".
 * [VS Code](https://code.visualstudio.com)
 * [VS Code Remote Container Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
+Frontend Services
+-----------------
+All the following commands are to be run from within the `devcontainer`.
+
+**Install Dependencies**
+* Enter `cd frontend && yarn install` in the terminal.
+
+**Running the Frontend Application**
+* From within the `frontend` directory, enter `yarn start` in the terminal.
+  * The frontend application runs at the following URL locally: [http://localhost:4000](http://localhost:4000)
+
+
 Backend Services
 ----------------
 All the following commands are to be run from within the `devcontainer`.
 
 **Install Dependencies**
-* Enter `cd backend && yarn start` in the terminal.
+* Enter `cd backend && yarn install` in the terminal.
 
 **Setup Database**
 * Go to the `backend` directory in your terminal.
