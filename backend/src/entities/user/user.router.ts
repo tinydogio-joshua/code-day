@@ -3,6 +3,7 @@ import {
   createUserAction,
   deleteUserAction,
   retrieveAllUsersAction,
+  retrieveAllUsersForCompanyAction,
   retrieveUserAction,
   updateUserAction,
 } from './actions';
@@ -10,6 +11,7 @@ import {
 const router = express.Router();
 
 router.get('/all', retrieveAllUsersAction);
+router.get('/all-for-customer/:id', retrieveAllUsersForCompanyAction);
 router.post('/signup', createUserAction);
 router.get('/:id/delete', deleteUserAction);
 router.post('/:id/update', updateUserAction);
