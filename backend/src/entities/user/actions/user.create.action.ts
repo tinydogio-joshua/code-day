@@ -1,13 +1,13 @@
 import { NextFunction, Request, Response } from 'express';
 import { getConnection } from 'typeorm';
-import CustomerController from '../../customer/customer.controller';
+import { retrieveCustomer } from '../../customer/actions';
 import User from '../user.model';
 import { retrieveUser } from './user.retrieve.action';
 
 // TODO: Add tests and error checking.
 // TODO: Figure out appropriate return type via typeorm.
 export async function createUser(email: string, customerId: number): Promise<any | undefined> {
-  const customer = await CustomerController.getCustomerById(customerId);
+  const customer = await retrieveCustomer(customerId);
 
   const newUser = await getConnection()
     .createQueryBuilder()

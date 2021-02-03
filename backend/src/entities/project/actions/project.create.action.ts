@@ -1,13 +1,13 @@
 import { NextFunction, Request, Response } from 'express';
 import { getConnection } from 'typeorm';
-import CustomerController from '../../customer/customer.controller';
 import { retrieveProject } from './project.retrieve.action';
 import Project from '../project.model';
+import { retrieveCustomer } from '../../customer/actions';
 
 // TODO: Add tests and error checking.
 // TODO: Figure out appropriate return type via typeorm.
 export async function createProject(name: string, customerId: number): Promise<any | undefined> {
-  const customer = await CustomerController.getCustomerById(customerId);
+  const customer = await retrieveCustomer(customerId);
 
   const newProject = await getConnection()
     .createQueryBuilder()
@@ -30,7 +30,7 @@ export async function createProject(name: string, customerId: number): Promise<a
 
 // TODO: Add tests and error checking.
 export async function createProjectAction(req: Request, res: Response, next: NextFunction) {
-  const project = await createProject(req.body.name, 1);
+  const project = await createProject(req.body.name, parseInt(req.body.customerId, 10));
 
   res.json(project);
 }
