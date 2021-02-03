@@ -10,10 +10,10 @@ export default {
   username: process.env.DATABASE_USERNAME,
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE_NAME,
-  entities: ['./src/entities/**/*.model.ts'],
+  entities: [__dirname + '/**/*.model{.ts,.js}'],
   migrations: ['./src/migrations/*.ts'],
   cli: {
-    entitiesDir: './src/entities',
+    entitiesDir: __dirname + '/**/*.model{.ts,.js}',
     migrationsDir: './src/migrations',
   },
   synchronize: false,
