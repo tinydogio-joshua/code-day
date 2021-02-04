@@ -1,7 +1,7 @@
 Code Day Project
 ================
 
-This is my code day project. Currently it is only the backend API with a database.
+This is my code day project.
 
 Everything is setup to run within a VSCode "devcontainer".
 
